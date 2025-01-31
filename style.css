@@ -212,7 +212,7 @@ body {
   width: 100%;
 }
 
-.u-primary-heading{
+.u-primary-heading {
   text-align: center;
 }
 .primary-heading span {
@@ -246,12 +246,59 @@ body {
 }
 
 /*********************/
+/* SKILLS SECTION */
+/*********************/
+.section-skills {
+  padding: 4.8rem 0 9.6rem 0;
+  background-color: #151d34;
+}
+
+.skill-cards{
+  margin-top: 6.4rem;
+}
+.skill-card {
+  background: #17203a;
+  padding: 2rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.skill-item {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-level{
+  color: rgba(0, 238, 255, .9);
+}
+.skill-progress-bar {
+  /* border: 5px solid rgba(14, 255, 255, 0.1); */
+  border-radius: 5px;
+  background: rgba(14, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.progress {
+  height: 1rem;
+  background: linear-gradient(to right, #0ef, #00a7ee);
+  width: 80%;
+  transition: width 0.5s ease-in-out;
+
+}
+/*********************/
 /* CONTACT SECTION */
 /*********************/
 
 .section-contact {
   padding: 4.8rem 0 9.6rem 0;
-  background-color: #17203a;
+  background-color: #151d34;
 }
 
 .contact-information {
@@ -354,15 +401,14 @@ body {
 /*********************/
 /* FOOTER SECTION */
 /*********************/
-.section-footer{
+.section-footer {
   background-color: #151d34;
-
 }
-.footer-text{
+.footer-text {
   text-align: center;
-  padding: .65rem 0;
+  padding: 0.65rem 0;
   font-size: 1.6rem;
   color: #fff;
   font-weight: 400;
-  opacity: .8;
+  opacity: 0.8;
 }

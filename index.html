@@ -2,9 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- meta desciption: must be there for making responsive site-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- meta desciption: Information shown when searched in google-->
-    <meta name="decription" content="Sai Avinash Vagicherla portfolio website."/>
+    <meta
+      name="decription"
+      content="Sai Avinash Vagicherla portfolio website."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,6 +17,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="general.css" />
+    <script defer src="/script.js"></script>
     <title>Sai Avinash Vagicherla &mdash; Portfolio</title>
   </head>
 
@@ -21,16 +26,16 @@
       <div class="logo">Sai Avinash</div>
       <nav class="nav">
         <ul class="nav-list">
-          <li class="nav-item">Home</li>
-          <li class="nav-item">About</li>
-          <li class="nav-item">Skills</li>
-          <li class="nav-item">Experience</li>
-          <li class="nav-item">Contact Me</li>
+          <li><a href="#Home" class="nav-item">Home</a></li>
+          <li><a href="#About" class="nav-item">About</a></li>
+          <li><a href="#Skills" class="nav-item">Skills</a></li>
+          <li><a href="#Experience" class="nav-item">Experience</a></li>
+          <li><a href="#Contact" class="nav-item">Contact Me</a></li>
         </ul>
       </nav>
     </header>
 
-    <section class="section-hero">
+    <section class="section-hero" id="Home">
       <div class="container hero-main">
         <div class="hero-info">
           <div class="hero-text">
@@ -69,7 +74,13 @@
           </div>
 
           <div class="download">
-            <button href="#" class="btn">Download CV</button>
+            <a
+              href="https://drive.google.com/file/d/1O3AMX2ulXBcqiBoI_qJ1IAAPEc-GH2iO/view?usp=sharing"
+              class="btn"
+              target="_blank"
+            >
+              Download CV
+            </a>
           </div>
         </div>
 
@@ -79,7 +90,7 @@
       </div>
     </section>
 
-    <section class="section-about">
+    <section class="section-about" id="About">
       <div class="container">
         <div class="about grid grid--2-columns">
           <div class="about-img">
@@ -89,7 +100,13 @@
           <div class="about-text">
             <div class="primary-heading">About <span>Me</span></div>
             <div class="about-text-description">
-              I thrive on solving complex coding challenges and creating elegant web solutions. Whether it's optimizing algorithms in competitive programming or crafting responsive web applications, I bring the same enthusiasm and attention to detail to every project. Currently exploring new frontiers in web development while continuously sharpening my problem-solving skills through coding competitions.
+              I thrive on solving complex coding challenges and creating elegant
+              web solutions. Whether it's optimizing algorithms in competitive
+              programming or crafting responsive web applications, I bring the
+              same enthusiasm and attention to detail to every project.
+              Currently exploring new frontiers in web development while
+              continuously sharpening my problem-solving skills through coding
+              competitions.
             </div>
             <div class="about-text-button">
               <button class="btn">Know More</button>
@@ -99,7 +116,7 @@
       </div>
     </section>
 
-    <section class="section-skills">
+    <section class="section-skills" id="Skills">
       <div class="container">
         <div class="primary-heading u-primary-heading">
           My <span>Skills</span>
@@ -120,7 +137,7 @@
             <div class="skill-box">
               <div class="skill-item">
                 <div class="skill-name">CSS</div>
-                <div class="skill-level" >60%</div>
+                <div class="skill-level">60%</div>
               </div>
 
               <div class="skill-progress-bar">
@@ -211,7 +228,7 @@
       </div>
     </section>
 
-    <section class="section-contact">
+    <section class="section-contact" id="Contact">
       <div class="container">
         <div class="primary-heading u-primary-heading">
           Contact <span>Me!</span>
@@ -271,8 +288,8 @@
 
     <footer class="section-footer">
       <div class="container footer-text">
-        Copyright &copy; 2025; <span>Sai Avinash Vagicherla.</span> All Rights
-        Reversed.
+        Copyright &copy; <span class="year">2027</span> by
+        <span>Sai Avinash Vagicherla.</span> All Rights Reversed.
       </div>
     </footer>
     <!-- Ion Icons Import Link -->

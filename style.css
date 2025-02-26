@@ -46,6 +46,7 @@ SPACING SYSTEM (px)
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -56,10 +57,10 @@ body {
 }
 
 .header {
-  height: 9.6rem;
+  height: 9rem;
   display: flex;
   justify-content: space-between;
-  background-color: #17203a;
+  background-color: #151d34;
   color: #fff;
   padding: 1.2rem 2.4rem;
   align-items: center;
@@ -79,14 +80,16 @@ body {
   display: flex;
   justify-content: space-around;
   gap: 6.4rem;
+  list-style: none;
 }
 
 .nav-item {
-  list-style: none;
   font-size: 1.8rem;
   cursor: pointer;
   letter-spacing: 0.1rem;
   transition: all 0.3s;
+  text-decoration: none;
+  color: #fff;
 }
 
 .nav-item:link,
@@ -96,21 +99,42 @@ body {
 
 .nav-item:active,
 .nav-item:hover {
-  color: #00a7ee;
+  color: #0ef;
 }
 
+/*********************/
+/* STICKY NAV BAR */
+/*********************/
+/* we're going to add sticky class to the body  */
+.sticky .header {
+  position: fixed;
+  width: 100%;
+  height: 9rem;
+  top: 0;
+  bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: 2px solid #000;
+  background-color: #151d34;
+  z-index: 999;
+  box-shadow: 0 1.2rem 3.2rem rgba(33, 36, 45, 0.84);
+}
+
+.sticky .section-hero {
+  margin-top: 9rem;
+}
 /*********************/
 /* HERO SECTION */
 /*********************/
 
 .section-hero {
-  background-color: #17203a;
+  background-color: #151d34;
   padding: 4.8rem 0 9.6rem 0;
 }
 
 .container {
   /* R */
-  max-width: 120rem;
+  max-width: 130rem;
   padding: 0 3.2rem;
   margin: 0 auto;
 }
@@ -145,6 +169,7 @@ body {
   display: flex;
   gap: 2.4rem;
 }
+
 .social-icon {
   height: 2.4rem;
   width: 2.4rem;
@@ -161,7 +186,7 @@ body {
 }
 
 .btn {
-  /*R*/
+  text-decoration: none;
   padding: 1.6rem 3.2rem;
   font-size: 2.4rem;
   font-weight: 700;
@@ -172,12 +197,13 @@ body {
   box-shadow: 2px 2px 8px rgba(8, 185, 239, 0.8);
 }
 
-.btn-cv:link,
-.btn-cv:visited {
+.btn:link,
+.btn:visited {
   box-shadow: 2px 2px 8px rgba(8, 185, 239, 0.8);
 }
-.btn-cv:active,
-.btn-cv:hover {
+
+.btn:active,
+.btn:hover {
   box-shadow: 2px 2px 8px rgba(8, 185, 239, 0.8);
 }
 
@@ -253,7 +279,7 @@ body {
   background-color: #151d34;
 }
 
-.skill-cards{
+.skill-cards {
   margin-top: 6.4rem;
 }
 .skill-card {
@@ -275,8 +301,8 @@ body {
   justify-content: space-between;
 }
 
-.skill-level{
-  color: rgba(0, 238, 255, .9);
+.skill-level {
+  color: rgba(0, 238, 255, 0.9);
 }
 .skill-progress-bar {
   /* border: 5px solid rgba(14, 255, 255, 0.1); */
@@ -290,7 +316,6 @@ body {
   background: linear-gradient(to right, #0ef, #00a7ee);
   width: 80%;
   transition: width 0.5s ease-in-out;
-
 }
 /*********************/
 /* CONTACT SECTION */

@@ -32,3 +32,23 @@ const obs = new IntersectionObserver(
   }
 );
 obs.observe(sectionHero);
+
+/****************************************/
+/************ MOBILE NAVIGATION *********/
+/****************************************/
+
+const header = document.querySelector(".header");
+const btnMobileNav = document.querySelector(".btn-mobile-nav");
+const navList = document.querySelector(".nav-list");
+
+// Toggle mobile navigation
+btnMobileNav.addEventListener("click", function () {
+  header.classList.toggle("nav-open");
+});
+
+// Close mobile navigation when clicking on a link
+navList.addEventListener("click", function (e) {
+  if (e.target.classList.contains("nav-item")) {
+    header.classList.remove("nav-open");
+  }
+});

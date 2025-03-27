@@ -9,6 +9,11 @@
       name="decription"
       content="Sai Avinash Vagicherla portfolio website."
     />
+    <!-- Font Awesome Icon Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,14 +31,8 @@
       <div class="logo">Sai Avinash</div>
 
       <button class="btn-mobile-nav">
-        <ion-icon
-          class="icon-mobile-nav icon-menu"
-          name="menu-outline"
-        ></ion-icon>
-        <ion-icon
-          class="icon-mobile-nav icon-close"
-          name="close-outline"
-        ></ion-icon>
+        <i class="fas fa-bars icon-mobile-nav icon-menu"></i>
+        <i class="fas fa-times icon-mobile-nav icon-close"></i>
       </button>
 
       <nav class="nav">
@@ -52,36 +51,29 @@
         <div class="hero-info">
           <div class="hero-text">
             <h1 class="hero-title">
-              Hi There, This is <br /><span> Sai Avinash Vagicherla </span>
-              <br />And I'm a Full Stack Developer
+              Hi There, This is <br /><span>Sai Avinash Vagicherla</span>
+              <br />And I'm <span class="typing-effect"></span>
             </h1>
 
             <div class="social-media">
               <a
                 href="https://www.linkedin.com/in/saiavinash2002/"
-                alt="Avinash Linkedin"
                 target="_blank"
               >
-                <ion-icon class="social-icon" name="logo-linkedin"></ion-icon>
+                <i class="fab fa-linkedin social-icon"></i>
+              </a>
+              <a href="https://x.com/VagicherlaA" target="_blank">
+                <i class="fab fa-twitter social-icon"></i>
               </a>
               <a
-                href="https://x.com/VagicherlaA"
-                alt="Avinash Twitter"
-                target="_blank"
-                ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
-              ></a>
-              <a
                 href="https://www.instagram.com/vagicherla_sai/"
-                alt="Avinash Instagram"
                 target="_blank"
-                ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
-              ></a>
-              <a
-                href="https://github.com/SaiAvinash2002"
-                alt="Avinash Github"
-                target="_blank"
-                ><ion-icon class="social-icon" name="logo-github"></ion-icon
-              ></a>
+              >
+                <i class="fab fa-instagram social-icon"></i>
+              </a>
+              <a href="https://github.com/SaiAvinash2002" target="_blank">
+                <i class="fab fa-github social-icon"></i>
+              </a>
             </div>
           </div>
 
@@ -234,6 +226,47 @@
               <div class="skill-progress-bar">
                 <div class="progress" style="width: 60%"></div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-publications" id="Publications">
+      <div class="container">
+        <div class="primary-heading u-primary-heading">
+          Research <span>Publication</span>
+        </div>
+        <div class="publications-grid">
+          <div class="publication-card">
+            <div class="publication-header">
+              <h3 class="publication-title">
+                Fly-ABAC: Attribute-Based Access Control for UAV Navigation
+              </h3>
+              <div class="publication-meta">
+                <span class="publication-venue">IEEE Big Data Conference</span>
+                <span class="publication-year">2024</span>
+              </div>
+            </div>
+            <div class="publication-description">
+              Fly-ABAC is a novel application of Attribute-Based Access Control
+              (ABAC) for UAV navigation which enhances security and compliance
+              for UAV operations. The system models both positive and negative
+              attributes and exclusion zones to enforce property access rules
+              which gives options for property owners to enforce access. Ensures
+              UAVs avoid unauthorized zones while adhering to property-specific
+              access requirements. Provides granular and customizable control
+              suitable for various scenarios, such as restricted government
+              buildings or private properties.
+            </div>
+            <div class="publication-actions">
+              <a
+                href="https://www.computer.org/csdl/proceedings-article/bigdata/2024/10825924/23yldeUbE0U"
+                target="_blank"
+                class="btn btn-publication"
+              >
+                View Research Paper
+              </a>
             </div>
           </div>
         </div>

@@ -156,8 +156,8 @@ body {
 
 .hero-title span {
   display: inline-block;
-  font-size: 5.6rem;
-  margin: 1.6rem 0;
+  font-size: 5.2rem;
+  margin: 1.4rem 0;
   letter-spacing: 0.5;
 }
 .hero-info {
@@ -171,8 +171,11 @@ body {
 }
 
 .social-icon {
-  height: 2.4rem;
-  width: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.4rem;
+  width: 3.4rem;
   border: 3px solid #0ef;
   padding: 1.2rem;
   border-radius: 50%;
@@ -323,6 +326,68 @@ body {
   width: 80%;
   transition: width 0.5s ease-in-out;
 }
+
+/*********************/
+/* PUBLICATIONS SECTION */
+/*********************/
+.section-publications {
+  padding: 4.8rem 0 9.6rem 0;
+  background-color: #151d34;
+}
+
+.publications-grid {
+  display: grid;
+  gap: 3.2rem;
+  margin-top: 4.8rem;
+}
+
+.publication-card {
+  background: #17203a;
+  padding: 3.2rem;
+  border-radius: 1.2rem;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.publication-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(14, 255, 255, 0.1);
+}
+
+.publication-header {
+  margin-bottom: 2.4rem;
+}
+
+.publication-title {
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+  color: #0ef;
+}
+
+.publication-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.publication-description {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-bottom: 2.4rem;
+}
+
+.btn-publication {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  background-color: #0ef;
+  color: #151d34;
+}
+
+.btn-publication:hover {
+  background-color: #1af0ff;
+}
 /*********************/
 /* CONTACT SECTION */
 /*********************/
@@ -463,4 +528,19 @@ body {
 
 .icon-close {
   display: none;
+}
+
+.typing-effect {
+  border-right: 2px solid #0ef;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #0ef;
+  }
 }

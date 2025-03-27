@@ -1,54 +1,106 @@
-/****************************************/
-/* FOOTER YEAR TO CHANGE DYNAMICALLY**/
-/****************************************/
+// Dynamic Typing Effect
+document.addEventListener("DOMContentLoaded", function () {
+  const jobTitlesContainer = document.querySelector(
+    ".hero-title span:last-child"
+  );
+  const jobTitles = ["Web Developer", "Programmer", "Problem Solver"];
+  let currentTitleIndex = 0;
+  let currentCharIndex = 0;
+  let isDeleting = false;
 
-const yearEl = document.querySelector(".year");
-const yearClass = new Date().getFullYear();
-yearEl.textContent = yearClass;
+  function typeWriter() {
+    const currentTitle = jobTitles[currentTitleIndex];
+    const textElement = jobTitlesContainer;
 
-/****************************************/
-/************** STICKY NAV **************/
-/****************************************/
-
-const sectionHero = document.querySelector(".section-hero");
-const obs = new IntersectionObserver(
-  function (entries) {
-    const ent = entries[0];
-    console.log(entries);
-    if (!ent.isIntersecting) {
-      document.body.classList.add("sticky");
+    if (!isDeleting && currentCharIndex <= currentTitle.length) {
+      textElement.textContent = currentTitle.slice(0, currentCharIndex + 1);
+      currentCharIndex++;
     }
-    if (ent.isIntersecting) {
-      document.body.classList.remove("sticky");
+
+    if (isDeleting && currentCharIndex > 0) {
+      textElement.textContent = currentTitle.slice(0, currentCharIndex - 1);
+      currentCharIndex--;
     }
-  },
-  {
-    // root: null ante in the viewport ani
-    root: null,
-    // It means threshold 0% viewport lo vunte
-    threshold: 0,
-    // to add the sticky class 80px before the section has crossed
-    rootMargin: "-82px",
+
+    let typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && currentCharIndex === currentTitle.length) {
+      typeSpeed = 2000;
+      isDeleting = true;
+    }
+
+    if (isDeleting && currentCharIndex === 0) {
+      isDeleting = false;
+      currentTitleIndex = (currentTitleIndex + 1) % jobTitles.length;
+    }
+
+    setTimeout(typeWriter, typeSpeed);
   }
-);
-obs.observe(sectionHero);
 
-/****************************************/
-/************ MOBILE NAVIGATION *********/
-/****************************************/
+  typeWriter();
 
-const header = document.querySelector(".header");
-const btnMobileNav = document.querySelector(".btn-mobile-nav");
-const navList = document.querySelector(".nav-list");
+  // Existing portfolio script code (from previous artifact)
+  /****************************************/
+  /* FOOTER YEAR TO CHANGE DYNAMICALLY**/
+  /****************************************/
 
-// Toggle mobile navigation
-btnMobileNav.addEventListener("click", function () {
-  header.classList.toggle("nav-open");
-});
+  const yearEl = document.querySelector(".year");
+  const yearClass = new Date().getFullYear();
+  yearEl.textContent = yearClass;
 
-// Close mobile navigation when clicking on a link
-navList.addEventListener("click", function (e) {
-  if (e.target.classList.contains("nav-item")) {
-    header.classList.remove("nav-open");
-  }
+  /****************************************/
+  /************** STICKY NAV **************/
+  /****************************************/
+
+  const sectionHero = document.querySelector(".section-hero");
+  const obs = new IntersectionObserver(
+    function (entries) {
+      const ent = entries[0];
+      if (!ent.isIntersecting) {
+        document.body.classList.add("sticky");
+      }
+      if (ent.isIntersecting) {
+        document.body.classList.remove("sticky");
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "-82px",
+    }
+  );
+  obs.observe(sectionHero);
+
+  /****************************************/
+  /************ MOBILE NAVIGATION *********/
+  /****************************************/
+
+  const header = document.querySelector(".header");
+  const btnMobileNav = document.querySelector(".btn-mobile-nav");
+  const navList = document.querySelector(".nav-list");
+
+  btnMobileNav.addEventListener("click", function () {
+    header.classList.toggle("nav-open");
+  });
+
+  navList.addEventListener("click", function (e) {
+    if (e.target.classList.contains("nav-item")) {
+      header.classList.remove("nav-open");
+    }
+  });
+
+  // Add hover effect to skill cards
+  const skillCards = document.querySelectorAll(".skill-card");
+  skillCards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "translateY(-10px)";
+      card.style.boxShadow = "0 1rem 2rem rgba(14, 255, 255, 0.1)";
+      card.style.transition = "all 0.3s ease";
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "translateY(0)";
+      card.style.boxShadow = "none";
+    });
+  });
 });

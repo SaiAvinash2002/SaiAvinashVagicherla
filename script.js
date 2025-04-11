@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const jobTitlesContainer = document.querySelector(
     ".hero-title span:last-child"
   );
-  const jobTitles = ["Web Developer", "Programmer", "Problem Solver"];
+  const jobTitles = ["Web Developer.", "Programmer.", "Problem Solver."];
   let currentTitleIndex = 0;
   let currentCharIndex = 0;
   let isDeleting = false;

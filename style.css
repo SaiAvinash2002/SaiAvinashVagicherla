@@ -174,18 +174,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 3.4rem;
-  width: 3.4rem;
+  text-decoration: none;
+  height: 5.2rem;
+  width: 5.2rem;
   border: 3px solid #0ef;
   padding: 1.2rem;
   border-radius: 50%;
   color: #0ef;
   transition: all 0.3s;
+  font-size: 2rem; /* Add this line to scale the icons */
 }
 
 .social-icon:hover {
   background-color: #1af0ff;
   color: #000;
+}
+
+.social-media a {
+  text-decoration: none; /* Remove underline from the links */
 }
 
 .btn {
@@ -273,6 +279,8 @@ body {
 }
 
 .about-text-description {
+  text-align: justify;
+  color: hsla(0, 0%, 100%, 0.715);
   padding: 2.4rem 0;
   font-size: 2.4rem;
   letter-spacing: 0.75;
@@ -532,7 +540,15 @@ body {
 
 .typing-effect {
   border-right: 2px solid #0ef;
+  color: hsla(184, 100%, 50%, 0.865);
   animation: blink 0.7s infinite;
+  display: inline-block;
+  min-width: 150px; /* Keeps width stable */
+  height: 6rem; /* Keeps height steady */
+  white-space: nowrap; /* Prevents wrapping */
+  overflow: hidden;
+  animation: blink 0.7s infinite;
+  vertical-align: middle;
 }
 
 @keyframes blink {

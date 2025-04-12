@@ -1,3 +1,16 @@
+/****************************************/
+/* PROGRESS BAR**/
+/****************************************/
+const progressBar = document.querySelector(".nav-progress-bar");
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+
+  progressBar.style.width = scrollPercent + "%";
+});
+
 // Dynamic Typing Effect
 document.addEventListener("DOMContentLoaded", function () {
   const jobTitlesContainer = document.querySelector(
@@ -103,4 +116,30 @@ document.addEventListener("DOMContentLoaded", function () {
       card.style.boxShadow = "none";
     });
   });
+});
+
+window.onbeforeunload = () => {
+  for (const form of document.getElementsByTagName("form")) {
+    form.reset();
+  }
+};
+
+const cards = document.querySelectorAll(".skill-card");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal");
+        observer.unobserve(entry.target); // Animate only once
+      }
+    });
+  },
+  {
+    threshold: 0.2,
+  }
+);
+
+cards.forEach((card) => {
+  observer.observe(card);
 });

@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./img/favicon-browser.jpg" />
     <!-- meta desciption: Information shown when searched in google-->
-    <meta
-      name="decription"
-      content="Sai Avinash Vagicherla portfolio website."
-    />
+    <meta name="deption" content="Sai Avinash Vagicherla portfolio website." />
     <!-- Font Awesome Icon Library -->
     <link
       rel="stylesheet"
@@ -45,6 +42,11 @@
           <li><a href="#Contact" class="nav-item">Contact Me</a></li>
         </ul>
       </nav>
+
+      <!-- 🔽 Progress Bar at bottom of HEADER -->
+      <div class="nav-progress-bar-container">
+        <div class="nav-progress-bar"></div>
+      </div>
     </header>
 
     <section class="section-hero" id="Home">
@@ -130,7 +132,7 @@
           My <span>Skills</span>
         </div>
         <div class="skill-cards grid grid--2-columns">
-          <div class="skill-card">
+          <div class="skill-card left">
             <div class="skill-box">
               <div class="skill-item">
                 <div class="skill-name">HTML</div>
@@ -156,15 +158,15 @@
             <div class="skill-box">
               <div class="skill-item">
                 <div class="skill-name">Java Script</div>
-                <div class="skill-level">10%</div>
+                <div class="skill-level">70%</div>
               </div>
 
               <div class="skill-progress-bar">
-                <div class="progress" style="width: 10%"></div>
+                <div class="progress" style="width: 70%"></div>
               </div>
             </div>
           </div>
-          <div class="skill-card">
+          <div class="skill-card right">
             <div class="skill-box">
               <div class="skill-item">
                 <div class="skill-name">Python</div>
@@ -198,7 +200,7 @@
               </div>
             </div>
           </div>
-          <div class="skill-card">
+          <div class="skill-card left">
             <div class="skill-box">
               <div class="skill-item">
                 <div class="skill-name">VS Studio</div>
@@ -283,43 +285,65 @@
           Contact <span>Me!</span>
         </div>
         <div class="contact-information">
-          <form action="#" class="contact-details grid--2-columns">
+          <form
+            action="https://formspree.io/f/mqapnaeg"
+            method="POST"
+            class="contact-details grid--2-columns"
+          >
+            <!-- Thank You Page Redirect -->
+            <input
+              type="hidden"
+              name="_next"
+              value="https://yourdomain.com/thankyou.html"
+            />
+
+            <!-- Honeypot Field (Spam Protection) -->
+            <input type="text" name="_honey" style="display: none" />
+
             <div class="contact-info">
               <label for="firstname">First Name</label>
               <input
                 id="firstname"
+                name="firstname"
                 placeholder="Enter your first name"
                 type="text"
                 required
               />
             </div>
+
             <div class="contact-info">
               <label for="lastname">Last Name</label>
               <input
                 id="lastname"
+                name="lastname"
                 placeholder="Enter your last name"
                 type="text"
                 required
               />
             </div>
+
             <div class="contact-info">
               <label for="mail">Email</label>
               <input
                 id="mail"
+                name="email"
                 placeholder="Enter your email address"
                 type="email"
                 required
               />
             </div>
+
             <div class="contact-info">
               <label for="phone">Phone Number</label>
               <input
                 id="phone"
+                name="phone"
                 placeholder="Enter your phone number"
                 type="tel"
                 required
               />
             </div>
+
             <div class="contact-info full-width">
               <label for="message">Message</label>
               <textarea
@@ -329,6 +353,7 @@
                 required
               ></textarea>
             </div>
+
             <button type="submit" class="btn">Send Message</button>
           </form>
         </div>

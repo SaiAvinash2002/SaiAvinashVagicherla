@@ -13,41 +13,40 @@ window.addEventListener("scroll", () => {
 
 // Dynamic Typing Effect
 document.addEventListener("DOMContentLoaded", function () {
-  const jobTitlesContainer = document.querySelector(
-    ".hero-title span:last-child"
-  );
+  const jobTitlesContainer = document.querySelector(".typing-effect");
   const jobTitles = ["Web Developer.", "Programmer.", "Problem Solver."];
+
   let currentTitleIndex = 0;
-  let currentCharIndex = 0;
+  let index = 0;
   let isDeleting = false;
 
   function typeWriter() {
-    const currentTitle = jobTitles[currentTitleIndex];
-    const textElement = jobTitlesContainer;
+    const currentTitle = jobTitles[currentTitleIndex % jobTitles.length];
 
-    if (!isDeleting && currentCharIndex <= currentTitle.length) {
-      textElement.textContent = currentTitle.slice(0, currentCharIndex + 1);
-      currentCharIndex++;
+    if (isDeleting) {
+      index--;
+      jobTitlesContainer.textContent = currentTitle.substring(0, index);
+    } else {
+      index++;
+      jobTitlesContainer.textContent = currentTitle.substring(0, index + 1);
     }
 
-    if (isDeleting && currentCharIndex > 0) {
-      textElement.textContent = currentTitle.slice(0, currentCharIndex - 1);
-      currentCharIndex--;
-    }
+    let speed = isDeleting ? 100 : 150;
 
-    let typeSpeed = isDeleting ? 50 : 100;
-
-    if (!isDeleting && currentCharIndex === currentTitle.length) {
-      typeSpeed = 2000;
+    // Index came to the end. So, need to start deleting
+    if (!isDeleting && index == currentTitle.length) {
       isDeleting = true;
+      speed = 1000; // wait 1s before deleting
     }
-
-    if (isDeleting && currentCharIndex === 0) {
+    // Deleting is done. Move to next title
+    else if (isDeleting && index === 0) {
+      // Move to next word
       isDeleting = false;
-      currentTitleIndex = (currentTitleIndex + 1) % jobTitles.length;
+      currentTitleIndex++;
+      speed = 300;
     }
 
-    setTimeout(typeWriter, typeSpeed);
+    setTimeout(typeWriter, speed);
   }
 
   typeWriter();

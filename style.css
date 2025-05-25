@@ -585,24 +585,27 @@ select:-webkit-autofill {
 }
 
 .typing-effect {
-  border-right: 2px solid #0ef;
+  /* border-right: 2px solid #0ef; */
   color: hsla(184, 100%, 50%, 0.865);
-  animation: blink 0.7s infinite;
-  display: inline-block;
-  min-width: 150px; /* Keeps width stable */
+  /* min-width: 150px; */
+  /* Keeps width stable */
   height: 6rem; /* Keeps height steady */
-  white-space: nowrap; /* Prevents wrapping */
   overflow: hidden;
-  animation: blink 0.7s infinite;
   vertical-align: middle;
 }
 
+.cursor {
+  color: hsla(184, 100%, 50%, 0.865);
+  animation: blink 1s linear infinite;
+  white-space: nowrap; /* Prevents wrapping */
+  display: inline-block;
+}
+
 @keyframes blink {
-  0%,
-  100% {
-    border-color: transparent;
+  0% {
+    opacity: 1;
   }
   50% {
-    border-color: #0ef;
+    opacity: 0;
   }
 }
